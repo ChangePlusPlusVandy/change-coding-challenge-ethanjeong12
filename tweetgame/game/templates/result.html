@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Statistics for Random Tweet Guessing Game!</title>
+        <link rel="stylesheet" href="{% static 'css/result.css' %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    </head>
+         
+    <body>
+        <div style="background-color: #FFFF00; margin-top:10px; margin-bottom:30px; border:6px solid green;"><h1>Check how you did on the game!</h1></div>
+        <h2>Total Count: {{ total_count }}</h2>
+        <h2>Correct Count: {{ correct_count }}</h2>
+        <h2>Correct Percentage (%): {{ Statistics }}</h2>
+        <h2> If you would like to continue the game, click Elon and Kanye :))</h2>
+        <a href="http://127.0.0.1:8000/tweets/display">
+            <img src="https://imgix.pedestrian.tv/content/uploads/2020/07/02/pjimage-2020-07-02T172937.055-637x397.jpg" alt="Kanye West and Elon Musk at SpaceX, 2011, and last week on Twitter">
+        </a>
+   </body>
+</html>

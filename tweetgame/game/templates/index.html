@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <title>Random Tweet Guessing Game!</title>
+    </head>
+  
+    <body>
+         <div style="background-color: #FFFF00; margin-left:21px;margin-top:10px; margin-right:10px;  margin-bottom:20px; border:4px solid green;"><h1>Welcome to Random Tweet Guessing Game!</h1></div>
+        <h2>You will be given two random tweets of Kanye West and Elon Musk.</h2>
+
+        <div style=margin-left:22px;><h3>Random Tweet: {{ Random_Tweet }}</h3></div>
+
+        <div style=margin-left:3px;><h2>Elon or Kanye? (Case Sensitive & Type Either Elon or Kanye Only)</h2></div>
+        <form action="" method="post">
+            <div style=margin-left:20px><textarea name='description' rows="3" cols="10" class="form-control" placeholder="Enter your guess: "></textarea></div>
+            {% csrf_token %}
+            {{ form }}
+            <div style=margin-left:20px;margin-top:10px><input type="submit" value="Submit"></div>
+        </form>
+        <form action="end" method="post">
+            {% csrf_token %}
+            <div style=margin-left:20px;margin-top:6px><button type="submit">See the Result</button></div>
+        </form>
+
+        <h2>You can see the result after each submission in the URL after "msg"</h2>
+        <h2>If you want to see the result, make sure to hit the "Submit" button before "See the Result!" button</h2>
+   </body>
+</html>
